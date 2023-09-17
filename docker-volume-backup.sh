@@ -1,6 +1,9 @@
 docker container stop mongovolume
 
-docker container create --name nginxbackup --mount "type=bind,source=/d/2. Workstation/1. course/Docker/belajar-docker-image/backup,destination=/backup" --mount "type=volume,source=mongodata,destination=//data" nginx:latest
+# pwd in linux cli
+/d/2-workstation/1-course/Docker/belajar-docker-image
+
+docker container create --name nginxbackup --mount "type=bind,source=/d/2-workstation/1-course/Docker/belajar-docker-image/backup,destination=/backup" --mount "type=volume,source=mongodata,destination=//data" nginx:latest
 
 docker container start nginxbackup
 
@@ -19,6 +22,6 @@ docker image pull ubuntu:latest
 
 docker container stop mongovolume
 
-docker container run --rm --name ubuntubackup --mount "type=bind,source=/d/2. Workstation/1. course/Docker/belajar-docker-image/backup,destination=/backup" --mount "type=volume,source=mongodata,destination=//data" ubuntu:latest tar cvf //backup//backup-lagi.tar.gz //data
+docker container run --rm --name ubuntubackup --mount "type=bind,source=/d/2-workstation/1-course/Docker/belajar-docker-image/backup,destination=/backup" --mount "type=volume,source=mongodata,destination=//data" ubuntu:latest tar cvf //backup//backup-lagi.tar.gz //data
 
 docker container start mongovolume
