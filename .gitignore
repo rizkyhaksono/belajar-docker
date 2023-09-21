@@ -1,0 +1,5 @@
+# backup volume
+/backup
+
+# mongo data
+/mongo-data
